@@ -106,10 +106,11 @@
 
 
 % 封面依赖的宏包
-\input{CoverHead}
+\input{Includes/CoverHead}
 % 评阅表依赖的宏包
-\input{ReviewTableHead}
-
+\input{Includes/ReviewTableHead}
+% 指定图片路径
+\graphicspath{{Images/}}
 
 
 \title{}
@@ -118,33 +119,27 @@
 \begin{document}
 
 % 封面中需要修改的内容直接在此处更改即可
-<<<<<<< HEAD
-\newcommand{\chineseTitle}{中文题目title楷体，二号，加粗}
-=======
-\newcommand{\chineseTitle}{中文题目（kaiti，二号，加粗）}
->>>>>>> f2abe8d92a580d14451f9f6a3c1c19de3b9520a0
-\newcommand{\englishTitle}{英文题目（Times New Roman，三号，加粗）}
+% 在标题中使用\hfill可以使下划线延长至行尾
+% 标题换行使用\\
+\newcommand{\chineseTitle}{中文题目（Kaiti，二号，加粗） \hfill} 
+\newcommand{\englishTitle}{英文题目（Times New Roman，三号，加粗） \hfill}
 \newcommand{\name}{张三}
 \newcommand{\studentID}{15000xxxxx}
 \newcommand{\school}{信息科学技术学院}
 \newcommand{\major}{电子信息科学与技术}
 \newcommand{\advisor}{李四}
 % 插入封面
-\input{cover}
+\input{Includes/Cover}
 \clearpage
 
 
 % 插入导师评阅表
-\input{ReviewTable}
+\input{Includes/ReviewTable}
 \clearpage
 
-<<<<<<< HEAD
 \zihao{-4}\songti\linespread{1.5}\selectfont
 \linespread{1.5}\selectfont
-=======
 
-\zihao{-4}\songti\linespread{1.5}\selectfont
->>>>>>> f2abe8d92a580d14451f9f6a3c1c19de3b9520a0
 \chapter*{版权声明}
 \setcounter{page}{0}
 % 本页不计页码
