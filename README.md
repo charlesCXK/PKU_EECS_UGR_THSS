@@ -9,10 +9,13 @@ There are mainly two branches: 'master' which follows the .doc file quite rigidl
 Beware to change the font names (songti, heiti, kaiti, and Times New Roman) according to your operating system. The font names in 'non-ctex' is tailored to my Mac OS.
 
 ## 'overleaf' branch is for overleaf building
+<<<<<<< HEAD
 
 To use the template in Overleaf, just download all the files in this branch and upload it to Overleaf. Set the main tex file to template.tex and it should be ready to compile. This branch still bases on ctex. Only font names are changed comparing to master branch.
 
 An older but stable version has been made available on Overleaf. Please search for [PKU EECS UGR THSS ctex](https://www.overleaf.com/latex/templates/pku-eecs-ugr-thss-ctex/mzhftgdsbgnw).
+=======
+>>>>>>> f2abe8d92a580d14451f9f6a3c1c19de3b9520a0
 
 ## 'cover' has been merged to 'master'
 
