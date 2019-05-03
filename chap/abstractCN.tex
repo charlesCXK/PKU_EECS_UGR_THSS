@@ -1,0 +1,56 @@
+\chapter*{摘要}
+% 这里写中文摘要
+Copyright (c) 2019 Bochen Tan, Xiaokang Chen
+
+Public domain.
+
+本模板的宗旨是尽量绿色，不需要附加安装任何东西。
+
+按照教务部下发的WORD说明文档格式，下简称“说明”
+
+没有封面和评阅表，这两部分请直接在Cover\&ReviewTable.doc中写再输出pdf拼到一起
+
+doc小改动：封面校徽和文字替换为了高清版本，“题目：”和中文题目对齐，中英文题目分在了表的两行
+
+doc小改动：插入了两个白页，使得连续打印的时候封面和表格都在奇数页
+
+正文部分改动：在每一页下方中央加了页码，因为说明中页眉不分奇偶页，所以页码就都在中央吧
+
+不含自动的参考文献，说明中参考文献格式不典型，请手动输入或自行写程序
+
+在Windows或Linux下渲染出字体更接近说明，Mac OS上字体不太一样
+
+有警告$\backslash$ headheight is too small，fancyhdr的上距离有点小，似乎问题不大
+
+\bigskip
+\noindent{\bfseries\songti 关键词: }
+
+
+
+\addcontentsline{toc}{chapter}{摘要} %手动加入目录
+\fancypagestyle{plain} %因为latex默认每章第一页是plain所以需要重置一下plain和说明统一
+{
+	\fancyhf{} %清空
+
+	\fancyhead[RE,RO]{摘要}
+	%偶数页右页眉，奇数页右页眉均为“摘要”，及章名\leftmark
+
+	\fancyhead[LE,LO]{北京大学本科生毕业论文}
+	%偶数页左页眉，奇数页左页眉均为“北京大学本科生毕业论文”
+
+	\fancyfoot[CO,CE]{~\thepage~}
+	%偶数页和奇数页中页脚为页码，从对称考虑，因为每页在说明中都是一样的，不分奇偶
+
+	\renewcommand{\headrulewidth}{0.7pt} %页眉线宽度，可调，不太清楚说明中是多少，待改
+
+	\renewcommand{\footrulewidth}{0pt} %页脚线宽度为0，既没有
+}
+
+%默认的风格是fancy，设置于下，用于每章非第一页
+\fancyhf{}
+\fancyhead[RE,RO]{摘要}
+\fancyhead[LE,LO]{北京大学本科生毕业论文}
+\fancyfoot[CO,CE]{~\thepage~}
+\renewcommand{\headrulewidth}{0.7pt}
+\renewcommand{\footrulewidth}{0pt}
+\clearpage

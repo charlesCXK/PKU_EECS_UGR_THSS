@@ -118,35 +118,33 @@
 \begin{document}
 
 % 封面中需要修改的内容直接在此处更改即可
-\newcommand{\chineseTitle}{中文题目title楷体，二号，加粗}
-\newcommand{\englishTitle}{英文题目（Times New Roman，三号，加粗）}
-\newcommand{\name}{张三}
-\newcommand{\studentID}{15000xxxxx}
+\newcommand{\chineseTitle}{中文题目（楷体，二号，加粗）
+}
+
+\newcommand{\englishTitle}{英文题目（Time New Roman，三号，加粗）}
+\newcommand{\name}{姓名}
+\newcommand{\studentID}{1500012xxx}
 \newcommand{\school}{信息科学技术学院}
-\newcommand{\major}{电子信息科学与技术}
-\newcommand{\advisor}{李四}
+\newcommand{\major}{计算机科学与技术}
+\newcommand{\advisor}{导师姓名}
 % 插入封面
 \input{cover}
 \clearpage
-
 
 % 插入导师评阅表
 \input{ReviewTable}
 \clearpage
 
-\zihao{-4}\songti\linespread{1.5}\selectfont
+
 \linespread{1.5}\selectfont
-\chapter*{版权声明}
-\setcounter{page}{0}
-% 本页不计页码
-\thispagestyle{empty}
-% 本页无页眉和页脚
-任何收存和保管本论文各种版本的单位和个人，未经本论文作者同意，不得将本论文转借他人，亦不得随意复制、抄录、拍照或以任何方式传播。否则，引起有碍作者著作权之问题，将可能承担法律责任。
+\include{chap/copyright}        %%%% 版权声明 %%%%
 \clearpage
 
 %版权声明后空白一页，使得摘要从奇数页开始。
 \quad
-\setcounter{page}{0}
+	% 重置页码计数器，用大写罗马数字排版此部分页码。
+	\setcounter{page}{0}
+	\pagenumbering{Roman}
 % 本页不计页码
 \thispagestyle{empty}
 % 本页无页眉和页脚
@@ -158,97 +156,11 @@
 \normalsize
 \linespread{1.5}\selectfont
 %小四号，宋体/Time new roman，1.5倍行距
-\chapter*{摘要}
-Copyright (c) 2019 Bochen Tan
 
-Public domain.
-
-本模板的宗旨是尽量绿色，不需要附加安装任何东西。
-
-按照教务部下发的WORD说明文档格式，下简称“说明”
-
-没有封面和评阅表，这两部分请直接在Cover\&ReviewTable.doc中写再输出pdf拼到一起
-
-doc小改动：封面校徽和文字替换为了高清版本，“题目：”和中文题目对齐，中英文题目分在了表的两行
-
-doc小改动：插入了两个白页，使得连续打印的时候封面和表格都在奇数页
-
-正文部分改动：在每一页下方中央加了页码，因为说明中页眉不分奇偶页，所以页码就都在中央吧
-
-不含自动的参考文献，说明中参考文献格式不典型，请手动输入或自行写程序
-
-在Windows或Linux下渲染出字体更接近说明，Mac OS上字体不太一样
-
-有警告$\backslash$ headheight is too small，fancyhdr的上距离有点小，似乎问题不大
-
-\bigskip
-\noindent{\bfseries\songti 关键词: }
-
-
-
-\addcontentsline{toc}{chapter}{摘要} %手动加入目录
-\fancypagestyle{plain} %因为latex默认每章第一页是plain所以需要重置一下plain和说明统一
-{
-	\fancyhf{} %清空
-
-	\fancyhead[RE,RO]{摘要}
-	%偶数页右页眉，奇数页右页眉均为“摘要”，及章名\leftmark
-
-	\fancyhead[LE,LO]{北京大学本科生毕业论文}
-	%偶数页左页眉，奇数页左页眉均为“北京大学本科生毕业论文”
-
-	\fancyfoot[CO,CE]{~\thepage~}
-	%偶数页和奇数页中页脚为页码，从对称考虑，因为每页在说明中都是一样的，不分奇偶
-
-	\renewcommand{\headrulewidth}{0.7pt} %页眉线宽度，可调，不太清楚说明中是多少，待改
-
-	\renewcommand{\footrulewidth}{0pt} %页脚线宽度为0，既没有
-}
-
-%默认的风格是fancy，设置于下，用于每章非第一页
-\fancyhf{}
-\fancyhead[RE,RO]{摘要}
-\fancyhead[LE,LO]{北京大学本科生毕业论文}
-\fancyfoot[CO,CE]{~\thepage~}
-\renewcommand{\headrulewidth}{0.7pt}
-\renewcommand{\footrulewidth}{0pt}
-\clearpage
-
-
-
-
-
-
-\small
-\linespread{1.5}\selectfont
-%5号，Time new roman，1.5倍行距
-\chapter*{\bfseries Abstract}
-
-\bigskip
-\noindent
-{\bfseries Key Words: }
-
-
-
-\addcontentsline{toc}{chapter}{\bfseries Abstract} %Abstract加粗
-\fancypagestyle{plain}
-{
-	\fancyhf{}
-	\fancyhead[RE,RO]{Abstract}
-	\fancyhead[LE,LO]{北京大学本科生毕业论文}
-	\fancyfoot[CO,CE]{~\thepage~}
-	\renewcommand{\headrulewidth}{0.7pt}
-	\renewcommand{\footrulewidth}{0pt}
-}
-\fancyhf{}
-\fancyhead[RE,RO]{Abstract}
-\fancyhead[LE,LO]{北京大学本科生毕业论文}
-\fancyfoot[CO,CE]{~\thepage~}
-\renewcommand{\headrulewidth}{0.7pt}
-\renewcommand{\footrulewidth}{0pt}
-\clearpage
-
-
+%%%% 中文摘要 %%%%
+\include{chap/abstractCN}
+%%%% 英文摘要 %%%%
+\include{chap/abstractEN}
 
 
 
@@ -274,8 +186,6 @@ doc小改动：插入了两个白页，使得连续打印的时候封面和表�
 
 
 
-
-
 \normalsize
 \linespread{1.5}\selectfont
 %正文，小四号，中文宋体，英文Time new roman，1.5倍行距
@@ -295,177 +205,20 @@ doc小改动：插入了两个白页，使得连续打印的时候封面和表�
 \renewcommand{\headrulewidth}{0.7pt}
 \renewcommand{\footrulewidth}{0pt}
 
-
-
-\chapter{章节名称}
-\section{一级段落名称}
-\subsection{二级段落名称}
-\subsubsection{三级段落名称}
-引用如\upcite{PhysRev.47.777}，引用表如表\ref{tab:input_output_r}，引用图如图\ref{fig:sample}．
-
-\begin{table}[h]
-\small %内容，（五号，宋体/Time new roman）
-\centering
-\caption{不同频率下的输入和输出阻抗}
-\label{tab:input_output_r}
-\begin{tabular}{cccc} %表格使用三线表
-\toprule %不确定说明中三条线的粗细，待改
-频率(Hz) & 1 & 10k & 1M \\
-\midrule
-输入电阻($\Omega/^\circ$) & 339.719k/-87.84 & 5.6707k/-9.827 & 351.188/-72.377\\
-输出电阻($\Omega/^\circ$) & 338.638k/-89.663 & 1.9866k/-1.1228 & 1.9189k/-14.801 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=12cm]{sample.jpg}
-\caption{示例图片}
-\label{fig:sample}
-\end{figure}
-\clearpage
-
-
-
-
-
-\small
-\linespread{1}\selectfont
-%正文，五号，中文宋体，英文Time new roman，1倍行距
-\chapter*{参考文献}
-\noindent
-\begin{enumerate}[{[1]}]
-\small
-	\item 期刊
-	\item 网络文档
-\end{enumerate}
-
-1.	期刊  作者. 论文名. 刊名, 出版年份, 卷号(期号): 起始-截止页
-
-2.	专著  作者. 书名. 版本(第一版不写). 出版城市: 出版社, 出版年份: 起始-截止页
-
-3.	论文集  论文作者. 论文题目//编者. 论文集名: 其他题名信息. 出版城市(或者会议城市): 出版者, 出版年: 引文起始-截止页码
-
-4.	学位论文  作者. 学位论文题名. 城市: 论文保存单位, 年份
-
-5.	网络文献  作者. 题名[文献类型标志/文献载体标志]. 出版地: 出版者, 出版年(更新日期)[引用日期]. 获取和访问路径
-
-*注意: 作者姓前名后, 超过3名作者列前3名, 后加“, 等”; 英文姓名, 姓前名后, 姓首字母大写, 名缩写; 文献的项目要完整, 各项的顺序和标点要和格式要求一致; 未公开发表的论文、报告不列入正式文献, 如有必要可在正文当页下加注。英文文献格式同上。参考文献在正文中按出现顺序用[1], [2]......在右上角标注, 放在“参考文献”中时, 用[1], [2], ...顺序标注。
-
-
-
-\addcontentsline{toc}{chapter}{参考文献}
-\fancypagestyle{plain}
-{
-	\fancyhf{}
-	\fancyhead[RE,RO]{参考文献}
-	\fancyhead[LE,LO]{北京大学本科生毕业论文}
-	\fancyfoot[CO,CE]{~\thepage~}
-	\renewcommand{\headrulewidth}{0.7pt}
-	\renewcommand{\footrulewidth}{0pt}
-}
-\fancyhf{}
-\fancyhead[RE,RO]{参考文献}
-\fancyhead[LE,LO]{北京大学本科生毕业论文}
-\fancyfoot[CO,CE]{~\thepage~}
-\renewcommand{\headrulewidth}{0.7pt}
-\renewcommand{\footrulewidth}{0pt}
-
-
-
-
-
-
-\bibliographystyle{unsrt}
-\bibliography{ref}
-这是参考“参考文献”，主要用来看引用的顺序，请手动些参考文献或自行写程序，最终编译请删除
-\clearpage
-
-
-
-
-
-\linespread{1}\selectfont
-\normalsize
-%小四号，中文宋体，英文Time new roman，1倍行距
-\chapter*{本科期间的主要工作和成果}
-
-\noindent 本科期间参加的主要科研项目
-
-\noindent 本研基金
-\begin{enumerate}
-	\item 基金名称. 基金类型. 指导老师. 基金支持年限
-\end{enumerate}
-
-\noindent 各种科研项目
-\begin{enumerate}
-	\item 项目名称. 项目类型
-\end{enumerate}
-
-格式下
-
-期刊：
-
-全部作者. 论文名. 期刊名, 出版年份, 卷号(期号): 起始-截止页
-
-会议论文：
-
-全部作者. 论文名. 会议名, 会议举办地, 会议举办时间, 起始-截止页
-
-专利
-
-全部专利申请人. 专利名称. 专利申请号. 专利申请日期. 国别
-
-
-
-\addcontentsline{toc}{chapter}{本科期间的主要工作和成果}
-\fancypagestyle{plain}
-{
-	\fancyhf{}
-	\fancyhead[RE,RO]{本科期间的主要工作和成果}
-	\fancyhead[LE,LO]{北京大学本科生毕业论文}
-	\fancyfoot[CO,CE]{~\thepage~}
-	\renewcommand{\headrulewidth}{0.7pt}
-	\renewcommand{\footrulewidth}{0pt}
-}
-\fancyhf{}
-\fancyhead[RE,RO]{本科期间的主要工作和成果}
-\fancyhead[LE,LO]{北京大学本科生毕业论文}
-\fancyfoot[CO,CE]{~\thepage~}
-\renewcommand{\headrulewidth}{0.7pt}
-\renewcommand{\footrulewidth}{0pt}
-\clearpage
-
-
-
-
-
-\linespread{1.5}\selectfont
-\normalsize
-%正文，小四号，中文宋体，英文Time new roman，1.5倍行距
-\chapter*{致谢}
-
-
-
-\addcontentsline{toc}{chapter}{致谢}
-\fancypagestyle{plain}
-{
-	\fancyhf{}
-	\fancyhead[RE,RO]{致谢}
-	\fancyhead[LE,LO]{北京大学本科生毕业论文}
-	\fancyfoot[CO,CE]{~\thepage~}
-	\renewcommand{\headrulewidth}{0.7pt}
-	\renewcommand{\footrulewidth}{0pt}
-}
-\fancyhf{}
-\fancyhead[RE,RO]{致谢}
-\fancyhead[LE,LO]{北京大学本科生毕业论文}
-\fancyfoot[CO,CE]{~\thepage~}
-\renewcommand{\headrulewidth}{0.7pt}
-\renewcommand{\footrulewidth}{0pt}
-
-
+% 以下为正文部分，添加/删除章节修改这部分以及 chap 文件夹下对应文件
+\mainmatter
+% 第一章
+\include{chap/chap1}
+% 第二章
+\include{chap/chap2}
+% 结论
+\include{chap/conclusion}
+% 参考文献
+\include{chap/reference}
+% 本科阶段的主要工作和成果
+\include{chap/achievement}
+% 致谢
+\include{chap/acknowledge}
 
 
 
