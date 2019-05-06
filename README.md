@@ -47,3 +47,11 @@ There are five .tex files:
 2. ##### 增加了文件夹结构，只需修改 `chap/` 文件夹下的文件以及在 `Template.tex` 中对应的 `include` 语句即可加入新的章节
 
 3. ##### 增加了封面word版。由于现在的模板存在这样一个问题：标题过长的话会出现格式错误。所以有这种情况的话，建议在word文件中写好封面，然后打印成PDF，放到模板生成的PDF的第一页，构成完整的毕业论文。
+4. ##### 关于图片编号问题
+默认图片编号是 `图1`，`图2` 之类。若想实现类似于 `图 1.1` 这样章节号+章节内图片号的编号，只需在每一张最前面加入如下几行命令
+```
+\renewcommand {\thetable} {\thechapter{}.\arabic{table}}
+\renewcommand {\thefigure} {\thechapter{}.\arabic{figure}}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+```
