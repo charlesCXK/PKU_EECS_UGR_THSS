@@ -55,3 +55,9 @@ There are five .tex files:
 \setcounter{table}{0}
 \setcounter{figure}{0}
 ```
+5. ##### subfigure 导入失败
+如果在导入 subfigure 时遇到 `LaTeX Error: Command \c@lofdepth already defined.`，请这样导入：
+```
+\usepackage{subfigure}
+\usepackage[subfigure]{tocloft}
+```
