@@ -48,7 +48,7 @@ There are five .tex files:
 
 3. ##### 增加了封面word版。由于现在的模板存在这样一个问题：标题过长的话会出现格式错误。所以有这种情况的话，建议在word文件中写好封面，然后打印成PDF，放到模板生成的PDF的第一页，构成完整的毕业论文。
 4. ##### 关于图片编号问题
-默认图片编号是 `图1`，`图2` 之类。若想实现类似于 `图 1.1` 这样章节号+章节内图片号的编号，只需在每一张最前面加入如下几行命令
+默认图片编号是 `图1`，`图2` 之类。若想实现类似于 `图 1.1` 这样章节号+章节内图片号的编号，只需在每一章节最前面加入如下几行命令
 ```
 \renewcommand {\thetable} {\thechapter{}.\arabic{table}}
 \renewcommand {\thefigure} {\thechapter{}.\arabic{figure}}
@@ -61,3 +61,5 @@ There are five .tex files:
 \usepackage{subfigure}
 \usepackage[subfigure]{tocloft}
 ```
+## Tip
+需要选择 `XeLaTex` 作为编译语言，因为模板中引入了 `ctex` 中文包。
