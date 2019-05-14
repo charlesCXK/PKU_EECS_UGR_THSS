@@ -62,4 +62,5 @@ There are five .tex files:
 \usepackage[subfigure]{tocloft}
 ```
 ## Tip
-需要选择 `XeLaTex` 作为编译语言，因为模板中引入了 `ctex` 中文包。
+- 需要选择 `XeLaTex` 作为编译语言，因为模板中引入了 `ctex` 中文包。
+- PDF 在线编辑网站(可拼接、裁剪PDF)：[here](https://smallpdf.com/cn)
