@@ -64,3 +64,4 @@ There are five .tex files:
 ## Tip
 - 需要选择 `XeLaTex` 作为编译语言，因为模板中引入了 `ctex` 中文包。
 - PDF 在线编辑网站(可拼接、裁剪PDF)：[here](https://smallpdf.com/cn)
+- 图片 caption 中加入脚注的方法： [here](http://blog.sina.com.cn/s/blog_567a58300102wopd.html)
